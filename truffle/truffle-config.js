@@ -5,8 +5,6 @@
  * them to suit your project as necessary.
  */
 require("dotenv").config();
-const mnemonic = process.env.MNEMONIC;
-const infuraProviderUrl = process.env.INFURA_PROVIDER;
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
@@ -18,14 +16,18 @@ module.exports = {
     // You should run a client (like ganache, geth, or parity) in a separate terminal
     //For running test cases run command of truffle test
 
-    development: {
-      host: "127.0.0.1", // Localhost (default: none)
-      port: 7545, // Standard Ethereum port (default: none)
-      network_id: "*", // Any network (default: none)
-    },
+    // development: {
+    //   host: "127.0.0.1", // Localhost (default: none)
+    //   port: 7545, // Standard Ethereum port (default: none)
+    //   network_id: "1337", // Any network (default: none)
+    // },
 
     goerli: {
-      provider: () => new HDWalletProvider(mnemonic, infuraProviderUrl),
+      provider: () =>
+        new HDWalletProvider(
+          `${process.env.MNEMONIC}`,
+          `${process.env.INFURA_PROVIDER}`
+        ),
       network_id: 5,
       chain_id: 5,
       gas: 5500000, // Gas limit used for deploys.

@@ -1,5 +1,5 @@
 //To run these test cases make sure your ganache app is running and configured in metamask, after run truffle test command for running these test cases,
-//these test cases will automatically run while deploy contract to testnet/mainnet using truffle migrate
+//test cases will only run when ganache ui is running
 
 // Import the contract artifacts
 const ToDoApp = artifacts.require("ToDoApp");
