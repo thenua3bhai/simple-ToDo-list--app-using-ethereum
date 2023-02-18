@@ -24,10 +24,7 @@ module.exports = {
 
     goerli: {
       provider: () =>
-        new HDWalletProvider(
-          `${process.env.MNEMONIC}`,
-          `${process.env.INFURA_PROVIDER}`
-        ),
+        new HDWalletProvider(process.env.MNEMONIC, process.env.INFURA_PROVIDER),
       network_id: 5,
       chain_id: 5,
       gas: 5500000, // Gas limit used for deploys.

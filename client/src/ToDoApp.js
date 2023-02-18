@@ -33,7 +33,7 @@ function ToDoApp() {
       {" "}
       <NavBar />
       <Grid container justifyContent="center" style={{ marginTop: "1rem" }}>
-        <Grid item xs={11} md={7} lg={7}>
+        <Grid item xs={12} md={7} lg={7}>
           <ToDoForm toggleRun={toggleRun} />{" "}
           <ToDoList todos={toDos} toggleRun={toggleRun} />
         </Grid>
